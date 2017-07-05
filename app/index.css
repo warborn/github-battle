@@ -7,6 +7,11 @@ ul {
 	list-style: none;
 }
 
+a {
+	text-decoration: none;
+	color: #d0021b;
+}
+
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -46,4 +51,16 @@ ul {
 .popular-rank {
 	font-size: 20px;
 	margin: 10px;
+}
+
+.nav {
+	display: flex;
+}
+
+.nav .active {
+	font-weight: bold;
+}
+
+.nav li {
+	margin-right: 15px;
 }
