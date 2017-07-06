@@ -139,3 +139,7 @@ a {
 .reset:hover {
 	cursor: pointer;
 }
+
+.score {
+	text-align: center;
+}
