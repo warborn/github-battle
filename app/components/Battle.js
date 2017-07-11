@@ -1,7 +1,7 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-var Link = require('react-router-dom').Link;
-var PlayerPreview = require('./PlayerPreview');
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import PlayerPreview from './PlayerPreview';
 
 class PlayerInput extends React.Component {
 	constructor(props) {
@@ -16,7 +16,7 @@ class PlayerInput extends React.Component {
 	}
 
 	handleChange(event) {
-		var value = event.target.value;
+		const value = event.target.value;
 
 		this.setState(function() {
 			return {
@@ -78,7 +78,7 @@ class Battle extends React.Component {
 
 	handleSubmit(id, username) {
 		this.setState(function() {
-			var newState = {};
+			let newState = {};
 			newState[id + 'Name'] = username;
 			newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200';
 			return newState;
@@ -87,7 +87,7 @@ class Battle extends React.Component {
 
 	handleReset(id) {
 		this.setState(function() {
-			var newState = {};
+			let newState = {};
 			newState[id + 'Name'] = '';
 			newState[id + 'Image'] = null;
 			return newState;
@@ -95,11 +95,8 @@ class Battle extends React.Component {
 	}
 
 	render() {
-		var playerOneName = this.state.playerOneName;
-		var playerTwoName = this.state.playerTwoName;
-		var playerOneImage = this.state.playerOneImage;
-		var playerTwoImage = this.state.playerTwoImage;
-		var match = this.props.match;
+		const { playerOneName, playerTwoName, playerOneImage, playerTwoImage } = this.state;
+		const { match } = this.props;
 
 		return (
 			<div>
@@ -153,4 +150,4 @@ class Battle extends React.Component {
 	}
 }
 
-module.exports = Battle;
+export default Battle
