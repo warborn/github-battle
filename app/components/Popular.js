@@ -70,7 +70,7 @@ class Popular extends React.Component {
 		this.updateLanguage(this.state.selectedLanguage);
 	}
 
-	updateLanguage(lang) {
+	async updateLanguage(lang) {
 		this.setState(() => {
 			return {
 				selectedLanguage: lang,
@@ -78,10 +78,12 @@ class Popular extends React.Component {
 			}
 		})
 
-		fetchPopularRepos(lang)
-			.then((repos) => {
-				this.setState(() => ({ repos }) );
-			});
+		try {
+			const repos = await fetchPopularRepos(lang);
+			this.setState(() => ({ repos }) );
+		} catch(error) {
+			console.warn('Error getting popular repositories: ', error);
+		}
 	}
 
 	render() {
