@@ -28,6 +28,8 @@ class PlayerInput extends React.Component {
 	}
 
 	render() {
+		const { username } = this.state;
+		
 		return (
 			<form className='column' onSubmit={this.handleSubmit}>
 				<label className='header' htmlFor='username'>
@@ -38,12 +40,12 @@ class PlayerInput extends React.Component {
 					placeholder='github username'
 					type='text'
 					autoComplete='off'
-					value={this.state.username}
+					value={username}
 					onChange={this.handleChange} />
 				<button
 					className='button'
 					type='submit'
-					disabled={!this.state.username}>
+					disabled={!username}>
 						Submit
 				</button>
 			</form>
@@ -75,8 +77,8 @@ class Battle extends React.Component {
 	handleSubmit(id, username) {
 		this.setState(() => {
 			let newState = {};
-			newState[id + 'Name'] = username;
-			newState[id + 'Image'] = 'https://github.com/' + username + '.png?size=200';
+			newState[`${id}Name`] = username;
+			newState[`${id}Image`] = `https://github.com/${username}.png?size=200`;
 			return newState;
 		});
 	}
@@ -84,8 +86,8 @@ class Battle extends React.Component {
 	handleReset(id) {
 		this.setState(() => {
 			let newState = {};
-			newState[id + 'Name'] = '';
-			newState[id + 'Image'] = null;
+			newState[`${id}Name`] = '';
+			newState[`${id}Image`] = null;
 			return newState;
 		});
 	}
@@ -136,7 +138,7 @@ class Battle extends React.Component {
 					<Link
 						className='button'
 						to={{
-							pathname: match.url + '/results',
+							pathname: `${match.url}/results`,
 							search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`
 						}}>
 						Battle

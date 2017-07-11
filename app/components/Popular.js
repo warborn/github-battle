@@ -38,7 +38,7 @@ function RepoGrid({ repos }) {
 								<img 
 									className='avatar'
 									src={repo.owner.avatar_url}
-									alt={'Avatar for ' + repo.owner.login} />
+									alt={`Avatar for ${repo.owner.login}`} />
 							</li>
 							<li><a href={repo.html_url}>{repo.name}</a></li>
 							<li>@{repo.owner.login}</li>
@@ -80,19 +80,20 @@ class Popular extends React.Component {
 
 		fetchPopularRepos(lang)
 			.then((repos) => {
-				this.setState(() => ({ repos: repos }) );
+				this.setState(() => ({ repos }) );
 			});
 	}
 
 	render() {
+		const { repos } = this.state;
 		return(
 			<div>
 				<SelectLanguage 
 					selectedLanguage={this.state.selectedLanguage}
 					onSelected={this.updateLanguage}/>
-					{!this.state.repos
+					{!repos
 						? <Loading />
-						: <RepoGrid repos={this.state.repos} />}
+						: <RepoGrid repos={repos} />}
 			</div>
 		)
 	}
