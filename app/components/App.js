@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Popular from './Popular';
 import Nav from './Nav';
@@ -10,7 +10,7 @@ function NotFound() {
 	return <p>Not found</p>
 }
 
-class App extends React.Component {
+class App extends Component {
 	render() {
 		return (
 			<Router>

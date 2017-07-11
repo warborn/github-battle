@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import queryString from 'query-string';
 import { battle } from '../utils/api';
 import { Link } from 'react-router-dom';
@@ -44,7 +44,7 @@ Player.propTypes = {
 	profile: PropTypes.object.isRequired
 }
 
-class Results extends React.Component {
+class Results extends Component {
 	constructor(props) {
 		super(props);
 
