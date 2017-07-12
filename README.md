@@ -10,8 +10,9 @@ Some of the concepts applied are:
 - JavaScript Promises
 - Webpack configuration
 - NPM scripts to deploy to production using firebase
+- ES6/7 features like arrow functions, async/await, object destructuring
 
-### You can find the live version [here](https://wb-github-battle.firebaseapp.com/)
+### You can find the live version [here](https://wb-github-battle.netlify.com/)
 
 You can view the popular repositories from github and filter them by technology like Ruby, CSS, Java, etc.
 
@@ -36,7 +37,7 @@ $ cd github-battle
 $ npm install
 ```
 
-Try it on your local environment, execute the following command and wait for webpack to finish and go to http://localhost:8081/
+Try it on your local environment, execute the following command and wait for webpack to finish and go to http://localhost:8080/
 ```sh
 $ npm run start
 ```

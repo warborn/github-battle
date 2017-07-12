@@ -29,7 +29,8 @@ var config = {
 }
 
 if(process.env.NODE_ENV === 'production') {
-	config.plugin.push(
+	console.log('***PRODUCTION CONFIG***');
+	config.plugins.push(
 		new webpack.DefinePlugin({
 			'process.env': {
 				'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
